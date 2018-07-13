@@ -1,0 +1,63 @@
+/*.section1 { background: url('../images/section1.jpg') no-repeat center center;}
+.section2 { background: url('../images/section2.jpg') no-repeat center center;}
+.section3 { background: url('../images/section3.jpg') no-repeat center center;}
+.section4 { background: url('../images/section4.jpg') no-repeat center center;}
+.section5 { background: url('../images/section5.jpg') no-repeat center center;}
+.section6 { background: url('../images/section6.jpg') no-repeat center center;}
+.section7 { background: url('../images/section7.jpg') no-repeat center center;}
+.section8 { background: url('../images/section8.jpg') no-repeat center center;}
+.section9 { background: url('../images/section9.jpg') no-repeat center center;}
+.section10 { background: url('../images/section10.jpg') no-repeat center center;}*/
+
+.section .bg{ width: 100%;height: 100%; position: absolute; top: 0; left: 0;;}
+
+/*第一个页面*/
+.section .bg11{width: 100%; height: 850px; position: absolute; left: 0; bottom: 0; background: url('../images/bg11.png');} /*添加星星背景*/
+.section .bg12{width: 100%; height: 392px; position: absolute; left: 0; bottom: 90px; background: url('../images/bg12.png');}/*添加透明背景2*/
+.section .bg13{width: 100%; height: 337px; position: absolute; left: 0; bottom: 0px; background: url('../images/bg13.png') no-repeat 50% 0;} /*添加邮箱图片*/
+
+/*第二个页面*/
+.section .bg21{width: 819px; height: 250px; position: absolute; left: 50%;margin-left: -608px; bottom: 15%;margin-bottom: 40px;background: url('../images/bg21.png') no-repeat 0 0 ;} /*左侧小图鉴*/
+.section .bg22{width: 819px; height: 299px; position: absolute; left: 50%;margin-left: 320px; bottom: 15%; margin-bottom:70px;background: url('../images/bg22.png') no-repeat 0 0;} /*右侧小图鉴*/
+.section .bg23{width: 819px; height: 325px; position: absolute; left: 50%;margin-left: -409px; bottom: 15%; background: url('../images/bg23.png');} /*中心主图!*/
+
+/*第3个页面*/
+.section .bg31{position: absolute;left: 50%;bottom: 0;width: 892px;height: 472px;margin-left: -396px;margin-bottom: 80px;background: url('../images/bg31.png') no-repeat;} /*背景文字*/
+.section .bg32{position: absolute;left: 50%;bottom: 0;width: 892px;height: 472px;margin-left: -396px;background: url('../images/bg32.png') 470px bottom no-repeat;} /*小图标2*/
+.section .bg33{position: absolute;left: 50%;bottom: 0;width: 441px;height: 380px;margin-left: -120px;background: url('../images/bg33.png') 0 0 no-repeat;} /*手*/
+
+/*第4个页面*/
+.section .bg41{position: absolute;bottom: 15%;width: 100%;height: 372px;background: url('../images/bg41.png') 50% 0 no-repeat;} /*第一层圆形*/
+.section .bg42{position: absolute;bottom: 15%;width: 100%;height: 449px;background: url('../images/bg42.png') 50% 0 no-repeat;} /*第二层圆形*/
+.section .bg43{position: absolute;bottom: 15%;width: 100%;height: 449px;margin-bottom: -130px;background: url('../images/bg43.png') 50% 0 no-repeat;} /*第三层圆形*/
+
+/*第5个页面*/
+.bg51, .bg52, .bg53, .bg54 {position: absolute;z-index: 1;width: 208px;left: 50%;bottom: 20%;padding-top: 210px;}
+.section .bg51{margin-left: -551px;background: url('../images/bg51.png') 50% 0 no-repeat;} /*视频邮件*/
+.section .bg52{margin-left: -253px;background: url('../images/bg52.png') 50% 0 no-repeat;} /*虚拟场景*/
+.section .bg53{margin-left: 45px;background: url('../images/bg53.png') 50% 0 no-repeat;} /*只能体验*/
+.section .bg54{margin-left: 345px;background: url('../images/bg54.png') 50% 0 no-repeat;} /*账号关联*/
+/*第6个页面*/
+.section .bg61{position: absolute;top: 0px;width: 100%;height: 545px;background: url('../images/bg61.png') 50% 0 no-repeat;}
+.section .bg62{position: absolute;left: 50%;bottom: 20%;width: 597px;height: 284px;margin-left: -507px;background-image: url('../images/bg62.png');}
+.section .bg63{}
+/*第7个页面*/
+.section .bg71{position: absolute;left: 50%;bottom: 250px;width: 699px;height: 201px;margin-left: -630px;background: url('../images/bg71.png') 50% 0 no-repeat;}
+.section .bg72{position: absolute;left: 50%;bottom: 350px;width: 182px;height: 206px;margin-left: -170px;background: url('../images/bg72.png') 50% 0 no-repeat;}
+.section .bg73{position: absolute;left: 50%;bottom: 170px;width: 651px;height: 231px;margin-left: -530px;background: url('../images/bg73.png') 50% 0 no-repeat;}
+.section .bg74{position: absolute; width: 100%; height: 251px; left: 0; bottom: 0;}
+.section .bg74 img{ width: 100%;}
+/*第8个页面*/
+.section .bg81{position: absolute;width: 100%;bottom: 100px;height: 215px;background: url('../images/bg81.png') 50% 0 no-repeat;} /*固定山背景*/
+.section .bg82{position: absolute;left: 50%;bottom: 260px;width: 164px;height: 117px;margin-left: -280px;background-image: url('../images/bg82.png');} /*飞机1大*/
+.section .bg83{position: absolute;left: 50%;bottom: 380px;width: 70px;height: 29px;margin-left: -430px;background-image: url('../images/bg83.png');}/*飞机2中*/
+.section .bg84{position: absolute;left: 50%;bottom: 420px;width: 43px;height: 26px;margin-left: -510px;background-image: url('../images/bg84.png');}/*飞机3小*/
+/*第9个页面*/
+.bg91, .bg92, .bg93 {padding-top: 350px;font-size: 16px;color: #fff;}
+.section .bg91{position: absolute;left: 50%;bottom: 15%;width: 340px;margin-left: -570px;background: url('../images/bg91.png') 0 0 no-repeat;} /*二维码*/
+.section .bg92{position: absolute;left: 50%;bottom: 15%;width: 340px;margin-left: -180px;background: url('../images/bg92.png') 50% 0 no-repeat;}/*聊天*/
+.section .bg93{position: absolute;left: 50%;bottom: 15%;width: 340px;margin-left: 230px;background: url('../images/bg93.png') 50% 0 no-repeat;}/*提醒*/
+/*第10个页面*/
+.section .bg101{position: absolute;width: 100%;height: 100%;background: url('../images/bg101.png') 50% 20% no-repeat;} /*网格线*/
+.section .bg102{position: absolute;width: 100%;top: 25%;height: 79px;background: url('../images/bg102.png') 50% 0 no-repeat;} /*图片标题*/
+.section .bg103{position: absolute;width: 100%;top: 25%;height: 37px;margin-top: 110px;background: url('../images/bg103.png') 50% 0 no-repeat;} /*图片子标题*/
