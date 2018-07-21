@@ -1,63 +1,728 @@
-/*.section1 { background: url('../images/section1.jpg') no-repeat center center;}
-.section2 { background: url('../images/section2.jpg') no-repeat center center;}
-.section3 { background: url('../images/section3.jpg') no-repeat center center;}
-.section4 { background: url('../images/section4.jpg') no-repeat center center;}
-.section5 { background: url('../images/section5.jpg') no-repeat center center;}
-.section6 { background: url('../images/section6.jpg') no-repeat center center;}
-.section7 { background: url('../images/section7.jpg') no-repeat center center;}
-.section8 { background: url('../images/section8.jpg') no-repeat center center;}
-.section9 { background: url('../images/section9.jpg') no-repeat center center;}
-.section10 { background: url('../images/section10.jpg') no-repeat center center;}*/
+.section {
+	overflow: hidden;
+}
 
-.section .bg{ width: 100%;height: 100%; position: absolute; top: 0; left: 0;;}
+.section .bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 
 /*第一个页面*/
-.section .bg11{width: 100%; height: 850px; position: absolute; left: 0; bottom: 0; background: url('../images/bg11.png');} /*添加星星背景*/
-.section .bg12{width: 100%; height: 392px; position: absolute; left: 0; bottom: 90px; background: url('../images/bg12.png');}/*添加透明背景2*/
-.section .bg13{width: 100%; height: 337px; position: absolute; left: 0; bottom: 0px; background: url('../images/bg13.png') no-repeat 50% 0;} /*添加邮箱图片*/
+
+.section .bg11,
+.section .bg12,
+.section .bg13 {
+	position: absolute;
+}
+
+.section .bg12,
+.section .bg13 {
+	transition: all 1s;
+}
+
+.section .bg11 {
+	width: 100%;
+	height: 850px;
+	left: 0;
+	bottom: 0;
+	background: url('../images/bg11.png') no-repeat 0 0;
+}
+
+
+/*添加星星背景*/
+
+.section .bg12 {
+	width: 100%;
+	height: 392px;
+	left: 0;
+	bottom: -392px;
+	background: url('../images/bg12.png') no-repeat 0 0;
+	opacity: 0;
+}
+
+
+/*添加透明背景2*/
+
+.section .bg13 {
+	width: 100%;
+	height: 337px;
+	left: 0;
+	bottom: -377px;
+	background: url('../images/bg13.png') no-repeat 50% 0;
+	opacity: 0;
+}
+
+
+/*添加邮箱图片*/
+
+.section.active .bg12 {
+	bottom: 90px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg13 {
+	bottom: 0;
+	opacity: 1;
+	transition-delay: 1.2s;
+}
+
+
+/*((
+	#1 星星背景  [ 固定 ]
+	#2 透明邮箱图 ~ 由下而上 || 透明不透明
+	#3 主要邮箱图 ~ 由下而上 
+	
+	## 这里不用延迟来控制落差??
+))*/
+
 
 /*第二个页面*/
-.section .bg21{width: 819px; height: 250px; position: absolute; left: 50%;margin-left: -608px; bottom: 15%;margin-bottom: 40px;background: url('../images/bg21.png') no-repeat 0 0 ;} /*左侧小图鉴*/
-.section .bg22{width: 819px; height: 299px; position: absolute; left: 50%;margin-left: 320px; bottom: 15%; margin-bottom:70px;background: url('../images/bg22.png') no-repeat 0 0;} /*右侧小图鉴*/
-.section .bg23{width: 819px; height: 325px; position: absolute; left: 50%;margin-left: -409px; bottom: 15%; background: url('../images/bg23.png');} /*中心主图!*/
+
+.section .bg21,
+.section .bg22,
+.section .bg23 {
+	transition: all 1s;
+	position: absolute;
+}
+
+.section .bg21 {
+	width: 819px;
+	height: 250px;
+	left: 50%;
+	bottom: 15%;
+	margin-left: -1108px;
+	margin-bottom: 40px;
+	background: url('../images/bg21.png') no-repeat 0 0;
+	opacity: 0;
+}
+
+
+/*左侧小图鉴*/
+
+.section .bg22 {
+	width: 819px;
+	height: 299px;
+	left: 50%;
+	bottom: 15%;
+	margin-left: 820px;
+	margin-bottom: 70px;
+	background: url('../images/bg22.png') no-repeat 0 0;
+	opacity: 0;
+}
+
+
+/*右侧小图鉴*/
+
+.section .bg23 {
+	width: 819px;
+	height: 325px;
+	left: 50%;
+	bottom: -40%;
+	margin-left: -409px;
+	background: url('../images/bg23.png');
+}
+
+
+/*中心主图!*/
+
+.section.active .bg21 {
+	margin-left: -608px;
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+.section.active .bg22 {
+	margin-left: 320px;
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+.section.active .bg23 {
+	bottom: 15%;
+	transition-delay: 0.6s;
+}
+
+
+/*((
+	#1 主图 由下而上   ## 设置0.7秒的延迟是为什么?? ## 这个延迟是什么意思??
+	#2 左图 => 由左往右 
+	#3 右图 => 由右往左
+	#4 文字部分
+))*/
+
 
 /*第3个页面*/
-.section .bg31{position: absolute;left: 50%;bottom: 0;width: 892px;height: 472px;margin-left: -396px;margin-bottom: 80px;background: url('../images/bg31.png') no-repeat;} /*背景文字*/
-.section .bg32{position: absolute;left: 50%;bottom: 0;width: 892px;height: 472px;margin-left: -396px;background: url('../images/bg32.png') 470px bottom no-repeat;} /*小图标2*/
-.section .bg33{position: absolute;left: 50%;bottom: 0;width: 441px;height: 380px;margin-left: -120px;background: url('../images/bg33.png') 0 0 no-repeat;} /*手*/
+
+.section .bg31,
+.section .bg32,
+.section .bg33 {
+	transition: all 1s;
+	position: absolute;
+}
+
+.section .bg31 {
+	width: 892px;
+	height: 472px;
+	left: 50%;
+	bottom: 0;
+	margin-left: -396px;
+	margin-bottom: 80px;
+	background: url('../images/bg31.png') no-repeat;
+	opacity: 0;
+}
+
+
+/*粉笔字1*/
+
+.section .bg32 {
+	width: 892px;
+	height: 472px;
+	left: 50%;
+	bottom: 0;
+	margin-left: -396px;
+	background: url('../images/bg32.png') 470px bottom no-repeat;
+	opacity: 0;
+}
+
+
+/*粉笔字2*/
+
+.section .bg33 {
+	width: 441px;
+	height: 380px;
+	left: 50%;
+	bottom: 0;
+	margin-left: 50%;
+	background: url('../images/bg33.png') 0 0 no-repeat;
+}
+
+
+/*手*/
+
+.section.active .bg31,
+.section.active .bg32 {
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+.section.active .bg33 {
+	transition-delay: 0.7s;
+	margin-left: -120px;
+}
+
+
+/*((
+	#1 手  由右往左
+	#2 粉笔字背景 # 固定 # 透明~不透明
+	#3 透明到不透明 
+	#4 文字部分
+))*/
+
 
 /*第4个页面*/
-.section .bg41{position: absolute;bottom: 15%;width: 100%;height: 372px;background: url('../images/bg41.png') 50% 0 no-repeat;} /*第一层圆形*/
-.section .bg42{position: absolute;bottom: 15%;width: 100%;height: 449px;background: url('../images/bg42.png') 50% 0 no-repeat;} /*第二层圆形*/
-.section .bg43{position: absolute;bottom: 15%;width: 100%;height: 449px;margin-bottom: -130px;background: url('../images/bg43.png') 50% 0 no-repeat;} /*第三层圆形*/
+
+.section .bg41,
+.section .bg42,
+.section .bg43 {
+	transition: all 1s;
+	position: absolute;
+}
+
+.section .bg41 {
+	width: 100%;
+	height: 372px;
+	bottom: -372px;
+	background: url('../images/bg41.png') 50% 0 no-repeat;
+}
+
+
+/*第一层圆形*/
+
+.section .bg42 {
+	width: 100%;
+	height: 449px;
+	bottom: -449px;
+	background: url('../images/bg42.png') 50% 0 no-repeat;
+}
+
+
+/*第二层圆形*/
+
+.section .bg43 {
+	width: 100%;
+	height: 449px;
+	bottom: -449px;
+	margin-bottom: -130px;
+	/*很多余*/
+	background: url('../images/bg43.png') 50% 0 no-repeat;
+}
+
+
+/*第三层圆形*/
+
+.section.active .bg41 {
+	bottom: 15%;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg42 {
+	bottom: 15%;
+	transition-delay: 1.1s;
+}
+
+.section.active .bg43 {
+	bottom: 15%;
+	transition-delay: 0.9s;
+}
+
+
+/*((
+	#1 三图都由下往上 ~ 设置好执行速度保持落差感 ## 没有落差感??
+	#2 文字部分
+	
+	### 为什么要把延迟+active ?? 说明还原的时候不需要设置落差???  设置落差可能会很别扭?? 上去的时候 || 下去的时候 这时候的延迟会导致很不知然!! 显示的时候显示落差。
+	## 明白是为什么了!!! ## 做一个小实验
+))*/
+
 
 /*第5个页面*/
-.bg51, .bg52, .bg53, .bg54 {position: absolute;z-index: 1;width: 208px;left: 50%;bottom: 20%;padding-top: 210px;}
-.section .bg51{margin-left: -551px;background: url('../images/bg51.png') 50% 0 no-repeat;} /*视频邮件*/
-.section .bg52{margin-left: -253px;background: url('../images/bg52.png') 50% 0 no-repeat;} /*虚拟场景*/
-.section .bg53{margin-left: 45px;background: url('../images/bg53.png') 50% 0 no-repeat;} /*只能体验*/
-.section .bg54{margin-left: 345px;background: url('../images/bg54.png') 50% 0 no-repeat;} /*账号关联*/
+
+.bg51,
+.bg52,
+.bg53,
+.bg54 {
+	transition: all 1s;
+	position: absolute;
+	z-index: 1;
+	width: 208px;
+	padding-top: 210px; /*paddin控制元素高度*/
+	left: 50%;
+	bottom: 20%;
+	
+	opacity: 0;
+}
+
+.section .bg51 {
+	margin-left: -851px;
+	background: url('../images/bg51.png') 50% 0 no-repeat;
+}
+
+
+/*视频邮件*/
+
+.section .bg52 {
+	margin-left: -403px;
+	background: url('../images/bg52.png') 50% 0 no-repeat;
+}
+
+
+/*虚拟场景*/
+
+.section .bg53 {
+	margin-left: 195px;
+	background: url('../images/bg53.png') 50% 0 no-repeat;
+}
+
+
+/*智能体验*/
+
+.section .bg54 {
+	margin-left: 645px;
+	background: url('../images/bg54.png') 50% 0 no-repeat;
+}
+
+
+/*账号关联*/
+
+
+/*((
+	 #1 左1 左2 || 由左往右  || 半透明变不透明
+	 #2 左3 左4 || 由右往左  || 半透明变不透明
+	 #3 文字
+))*/
+
+.section.active .bg51 {
+	margin-left: -551px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg52 {
+	margin-left: -253px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg53 {
+	margin-left: 45px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg54 {
+	margin-left: 345px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+
 /*第6个页面*/
-.section .bg61{position: absolute;top: 0px;width: 100%;height: 545px;background: url('../images/bg61.png') 50% 0 no-repeat;}
-.section .bg62{position: absolute;left: 50%;bottom: 20%;width: 597px;height: 284px;margin-left: -507px;background-image: url('../images/bg62.png');}
-.section .bg63{}
+
+.section .bg61,
+.section .bg62 {
+	transition: all 1s;
+	position: absolute;
+}
+
+.section .bg61 {
+	width: 100%;
+	height: 545px;
+	top: -454px;
+	background: url('../images/bg61.png') 50% 0 no-repeat;
+}
+
+
+/*钟表背景*/
+
+.section .bg62 {
+	width: 597px;
+	height: 284px;
+	left: 10%;
+	bottom: 20%;
+	margin-left: -507px;
+	background-image: url('../images/bg62.png');
+	opacity: 0;
+}
+
+
+/*!主图*/
+
+.section.active .bg61 {
+	top: 0px;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg62 {
+	left: 50%;
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+
+/*((
+ 	#1 钟表背景 有上而下
+ 	#2 主图 由左往右
+ 	#3 文字
+))*/
+
+
 /*第7个页面*/
-.section .bg71{position: absolute;left: 50%;bottom: 250px;width: 699px;height: 201px;margin-left: -630px;background: url('../images/bg71.png') 50% 0 no-repeat;}
-.section .bg72{position: absolute;left: 50%;bottom: 350px;width: 182px;height: 206px;margin-left: -170px;background: url('../images/bg72.png') 50% 0 no-repeat;}
-.section .bg73{position: absolute;left: 50%;bottom: 170px;width: 651px;height: 231px;margin-left: -530px;background: url('../images/bg73.png') 50% 0 no-repeat;}
-.section .bg74{position: absolute; width: 100%; height: 251px; left: 0; bottom: 0;}
-.section .bg74 img{ width: 100%;}
+
+.section .bg71,
+.section .bg72,
+.section .bg73,
+.section .bg74 {
+	position: absolute;
+}
+
+.section .bg71,
+.section .bg72 {
+	transition: all 1s;
+}
+
+.section .bg71 {
+	width: 699px;
+	height: 201px;
+	left: 50%;
+	bottom: -201px;
+	margin-left: -630px;
+	background: url('../images/bg71.png') 50% 0 no-repeat;
+	opacity: 0;
+}/*图标背景*/
+
+
+
+
+.section .bg72 {
+	width: 182px;
+	height: 206px;
+	left: 50%;
+	bottom: -206px;
+	margin-left: -170px;
+	background: url('../images/bg72.png') 50% 0 no-repeat;
+	opacity: 0;
+}/*指示图*/
+
+
+
+
+.section .bg73 {
+	width: 651px;
+	height: 231px;
+	left: 50%;
+	bottom: 170px;
+	margin-left: -530px;
+	background: url('../images/bg73.png') 50% 0 no-repeat;
+}/*固定的草*/
+
+
+
+
+.section .bg74 {
+	width: 100%;
+	height: 251px;
+	left: 0;
+	bottom: 0;
+}/*草坪背景*/
+
+.section .bg74 img {
+	width: 100%;
+}/*控制草坪背景进行拉伸*/
+
+.section.active .bg71 {
+	bottom: 250px;
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+.section.active .bg72 {
+	bottom: 350px;
+	transition-delay: 0.9s;
+	opacity: 1;
+}
+
+
+/*((
+	#1 图标背景 || 由下往上
+	#2 指示图 || 由下往上 || 设置延迟0.7
+	#3 文字
+))*/
+
+
 /*第8个页面*/
-.section .bg81{position: absolute;width: 100%;bottom: 100px;height: 215px;background: url('../images/bg81.png') 50% 0 no-repeat;} /*固定山背景*/
-.section .bg82{position: absolute;left: 50%;bottom: 260px;width: 164px;height: 117px;margin-left: -280px;background-image: url('../images/bg82.png');} /*飞机1大*/
-.section .bg83{position: absolute;left: 50%;bottom: 380px;width: 70px;height: 29px;margin-left: -430px;background-image: url('../images/bg83.png');}/*飞机2中*/
-.section .bg84{position: absolute;left: 50%;bottom: 420px;width: 43px;height: 26px;margin-left: -510px;background-image: url('../images/bg84.png');}/*飞机3小*/
+.section .bg81,
+.section .bg82,
+.section .bg83,
+.section .bg84{
+	position: absolute;
+}
+.section .bg82,
+.section .bg83,
+.section .bg84{
+	transition: all 1s;
+	opacity: 0;
+}
+
+.section .bg81 {
+	width: 100%;
+	height: 215px;
+	bottom: 100px;
+	background: url('../images/bg81.png') 50% 0 no-repeat;
+}/*固定山背景*/
+
+
+
+
+.section .bg82 {
+	width: 164px;
+	height: 117px;
+	left: 50%;
+	bottom: 160px;
+	
+	margin-left: -180px;
+	background-image: url('../images/bg82.png');
+}/*飞机1大*/
+
+
+
+
+.section .bg83 {
+	width: 70px;
+	height: 29px;
+	left: 50%;
+	bottom: 280px;
+	
+	margin-left: -330px;
+	background-image: url('../images/bg83.png');
+}/*飞机2中*/
+
+
+
+
+.section .bg84 {
+	width: 43px;
+	height: 26px;
+
+	left: 50%;
+	bottom: 320px;
+	
+	margin-left: -410px;
+	background-image: url('../images/bg84.png');
+}/*飞机3小*/
+
+
+
+
+.section.active .bg82 {
+	bottom: 260px;
+	margin-left: -280px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg83 {
+	bottom: 380px;
+	margin-left: -430px;
+	opacity: 1;
+	transition-delay: 1s;
+}
+
+.section.active .bg84 {
+	bottom: 420px;
+	margin-left: -510px;
+	opacity: 1;
+	transition-delay: 1.2s
+}
+
+
+/*((
+	#1 大飞机 || 透明~不透明 || 左上位移 延迟0.9
+	#2 中飞机 || 透明~不透明 || 左上位移 延迟0.5
+	#3 小飞机 || 透明~不透明 || 左上位移
+	#4 文字
+))*/
+
+
 /*第9个页面*/
-.bg91, .bg92, .bg93 {padding-top: 350px;font-size: 16px;color: #fff;}
-.section .bg91{position: absolute;left: 50%;bottom: 15%;width: 340px;margin-left: -570px;background: url('../images/bg91.png') 0 0 no-repeat;} /*二维码*/
-.section .bg92{position: absolute;left: 50%;bottom: 15%;width: 340px;margin-left: -180px;background: url('../images/bg92.png') 50% 0 no-repeat;}/*聊天*/
-.section .bg93{position: absolute;left: 50%;bottom: 15%;width: 340px;margin-left: 230px;background: url('../images/bg93.png') 50% 0 no-repeat;}/*提醒*/
+
+.bg91,
+.bg92,
+.bg93 {
+	padding-top: 350px; /*使用paddin控制高度*/
+	width: 340px;
+	font-size: 16px;
+	color: #fff;
+	transition: all 1s;
+	opacity: 0;
+	position: absolute;
+}
+
+.section .bg91 {
+	left: 50%;
+	bottom: 15%;
+	margin-left: -970px;
+	background: url('../images/bg91.png') 0 0 no-repeat;
+}
+
+
+/*二维码*/
+
+.section .bg92 {
+	left: 50%;
+	bottom: 15%;
+	margin-left: -180px;
+	background: url('../images/bg92.png') 50% 0 no-repeat;
+}
+
+
+/*聊天*/
+
+.section .bg93 {
+	left: 50%;
+	bottom: 15%;
+	margin-left: 630px;
+	background: url('../images/bg93.png') 50% 0 no-repeat;
+}
+
+
+/*提醒*/
+
+.section.active .bg91 {
+	margin-left: -570px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+.section.active .bg92 {
+	opacity: 1;
+	transition-delay: 0.8s;
+}
+
+.section.active .bg93 {
+	margin-left: 230px;
+	opacity: 1;
+	transition-delay: 0.7s;
+}
+
+
+/*((
+ 	#1 二维码 # 左往右~ || 透明边不透明
+ 	#2 聊天 # 透明变不透明
+ 	#3 提醒 # 右往左 || 透明边不透明
+ 	
+ 	//## 布局方面还需要进行调整!!
+))*/
+
+
 /*第10个页面*/
-.section .bg101{position: absolute;width: 100%;height: 100%;background: url('../images/bg101.png') 50% 20% no-repeat;} /*网格线*/
-.section .bg102{position: absolute;width: 100%;top: 25%;height: 79px;background: url('../images/bg102.png') 50% 0 no-repeat;} /*图片标题*/
-.section .bg103{position: absolute;width: 100%;top: 25%;height: 37px;margin-top: 110px;background: url('../images/bg103.png') 50% 0 no-repeat;} /*图片子标题*/
+
+.section .bg101 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url('../images/bg101.png') 50% 20% no-repeat;
+}
+
+
+/*网格线# 固定*/
+.section .bg102,
+.section .bg103{
+	width: 100%;
+	opacity: 0;
+	transition: all 1s;
+	transform: scale(0.5, 0.5);
+	position: absolute;
+	top: 25%;
+}
+.section .bg102 {
+	height: 79px;
+	background: url('../images/bg102.png') 50% 0 no-repeat;
+}
+
+
+/*图片标题*/
+
+.section .bg103 {
+	height: 37px;
+	margin-top: 110px;
+	background: url('../images/bg103.png') 50% 0 no-repeat;
+}
+
+
+/*图片子标题*/
+
+.section.active .bg102 {
+	transform: scale(1, 1);
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+.section.active .bg103 {
+	transform: scale(1, 1);
+	transition-delay: 0.7s;
+	opacity: 1;
+}
+
+
+/*((
+ 	#1 大标题，小标题  有小变大|| 透明变不透明
+))*/
+
+#fp-nav li a span {
+	background: #fff !important;
+}
