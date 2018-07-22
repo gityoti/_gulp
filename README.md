@@ -110,23 +110,10 @@
 
 ## 代码
 ### 单行
-    `代码内容`
+`代码内容`
 ### 多行代码
-    ```
-        a
-        b
-        c
-    ```
-
-## 还有流程图? 这个厉害了
-```flow
-st=>start: 开始
-op=>operation: My Operation
-cond=>condition: Yes or No?
-e=>end
-st->op->cond
-cond(yes)->e
-cond(no)->op
-&```
-
-###     **缓存管理**
+```
+    a
+    b
+    c
+```
