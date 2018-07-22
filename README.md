@@ -1,16 +1,15 @@
 ﻿
 > # gulp 项目调试
->   > ## 配置信息
->   >   >gulp4.0+ejs+less+javascript
-***
->   > ## gulp
->   >   > ### 事件
->   >   >   > unlink(链接发生删除) | change(文件发送修改)
->   >   >   > watch.on('unlink',fn)
->   >   > ### 问题1:gulp 怎么将任务分离成 进行引用( 将任务从gulpfile.js分离出来 )
->   >   >   > 太多文件写入可读性太差了
->   >   >   > 使用 require('require-dir') 插件将任务进行模块化!
-
+>> ## 配置信息
+>>>gulp4.0+ejs+less+javascript
+>> ## gulp
+>>> ### 事件
+>>>   > unlink(链接发生删除) | change(文件发送修改)
+>>>   > watch.on('unlink',fn)
+>>> ### 问题1:gulp 怎么将任务分离成 进行引用( 将任务从gulpfile.js分离出来 )
+>>>> 太多文件写入可读性太差了
+>>>> 使用 require('require-dir') 插件将任务进行模块化!
+>>>>
 
 # _gulp 版本
     #
@@ -63,3 +62,11 @@
 # 图标文字
     # http://www.fontawesome.com.cn/
     # 不知道需求是否能够满足
+
+
+#这是一级标题
+## 这是二级标题
+### 这是三级标题
+#### 这是四级标题
+##### 这是五级标题
+###### 这是六级标题
