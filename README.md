@@ -1,9 +1,21 @@
-﻿# ejs+less # change path
+﻿
+> # gulp 项目调试
+>   > ## 配置信息
+>   >   >gulp4.0+ejs+less+javascript
+***
+>   > ## gulp
+>   >   > ### 事件
+>   >   >   > unlink(链接发生删除) | change(文件发送修改)
+>   >   >   > watch.on('unlink',fn)
+>   >   > ### 问题1:gulp 怎么将任务分离成 进行引用( 将任务从gulpfile.js分离出来 )
+>   >   >   > 太多文件写入可读性太差了
+>   >   >   > 使用 require('require-dir') 插件将任务进行模块化!
 
-# _gulp 版本4.0+
-    # gulp 怎么将任务分离成 xxx.js ==> gulpfile.js 进行引用
+
+# _gulp 版本
+    #
         # 太多文件写入可读性太差了
-        # 使用 require('require-dir') 插件将任务进行模块化!
+        #
     # 事件
         unlink => 链接发生 "删除","修改名称" 都会触发这个文件
         change => 发生修改
