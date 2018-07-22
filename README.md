@@ -80,14 +80,10 @@
 |444|555555|66666|77777|888888|
 
 ## 代码高亮
-   \``` css
-        .a{background:red}
-        .b{background:green; padding: 2px 10px 2px 1px}
-    \```
-    ``` css
-        .a{background:red}
-        .b{background:green; padding: 2px 10px 2px 1px}
-    ```
+``` css
+    .a{background:red}
+    .b{background:green; padding: 2px 10px 2px 1px}
+```
 ## 任务规划
 -[x] 完成
 -[ ] 未完成
