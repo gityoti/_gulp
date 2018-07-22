@@ -1,7 +1,7 @@
 ﻿
 ## gulp 项目调试
 ###     **配置信息**
-    `gulp4.0`+`ejs`+`less`+`javascript`
+`gulp4.0`+`ejs`+`less`+`javascript`
 ###     watch 监听||事件 `watch.on('unlink',fn)`
     `unlink` 链接发生删除
     `change` 文件发生修改
@@ -82,12 +82,27 @@
 |444|555555|66666|77777|888888|
 
 ## 代码高亮
+[高亮配置](https://www.jianshu.com/p/5df593b23dbf "配置")
 ``` css
     .a{background:red}
     .b{background:green; padding: 2px 10px 2px 1px}
 ```
+``` javascript
+    var arr =[1,2,3]
+    var obj = {"name":'yoti',"age":"111"}
+    function fn(a,b,c){
+        return a+b+c;
+    }
+    fn(1,2,3)
+    if(1){
+        console.log(1)
+    }else{
+        console.log(0)
+    }
+```
+
 ## 任务规划
-- [x] 完成
+- [x] 完成 -空格[x] 空格 描述
 - [ ] 未完成
 - [x] 完成
 - [ ] 加急
