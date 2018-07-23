@@ -109,7 +109,27 @@
 - [ ] 加急
 
 ## gulp 插件列表
-名称|描述|其他
+插件名称|插件描述|补充说明
 --|--|--
-合并|gulp-concat|2
-删除|del|1
+`gulp-concat`|合并|-
+`del`|删除|-
+`gulp-load-plugins`|插件导入|-
+`gulp-jshint`|JS代码风格验证|-
+`gulp-csslint`|CSS代码风格验证|-
+`lazypipe`|pipe延迟|挺好用的
+`gulp-ejs`|ejs文件编译器|-
+`gulp-plumber`|编译报错工具|-
+`gulp-util`|编译错误be一声|-
+`gulp-imagemin`|图像压缩插件|-
+`gulp-imports`|JS导入插件|可以像less一样将需要的依赖文件加载进来,舍弃了合并排序等操作
+`gulp-sourcemaps`|记录所有的编译记录|JS CSS 经过压缩后可读性很差,使用这个插件后就可以看到编译前的内容
+`gulp-cache`|文件缓存|如果处理N多个,每次都要全部重新编译一次所有文件这很耗性能,使用缓存进行对比文件是否被修改,只进行局部的编译操作
+`gulp-remember`|还原缓存内容|配合缓存插件使用
+`gulp-uglify`|压缩JS代码|-
+`browser-sync`|浏览器插件|编译刷新的核心
+`gulp.spritesmith`|雪碧图插件|-
+`gulp-autoprefixer`|CSS添加前缀|-
+`gulp-clean-css`|CSS压缩|-
+`gulp-less`|less文件编译|-
+`time-stamp`|时间戳插件|-
+`gulp-zip`|文件打包|开发的时候进行迭代,将资源文件进行打包保存
