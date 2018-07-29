@@ -5,8 +5,6 @@
 ###     watch 监听||事件 `watch.on('unlink',fn)`
     `unlink` 链接发生删除
     `change` 文件发生修改
-
-
 ###     **其他**
     **问题**:`gulpfile.js 代码太过庞杂,将代码分割成多个xx.JS文件(任务进行分离),太多文件写入可读性太差了
     **解决**:`使用 require('require-dir') 插件将任务进行模块化!
@@ -28,21 +26,23 @@
                 5. 需要风格检验的文件链接 ~~ 监听路径.  ==> 需要再开一个任务.( 专门用于验证风格 js+css )
             2) 部署模式
                 1. 进行压缩 2.输出sourcemaps
-###     **任务规划**
-1.  删除生成文件[ `clean` ]
-2.  源文件备份  [ `zip` ]
-3.  html编译  [ `html` ]
-4.  styles 编译 [ `styles` ]
-5.  scripts 编译 [ `scripts` ]
-6.  images 编译  [ `images` ]
-7.  sp 编译  [ `sp` ]
-8.  字体文件 [`fonts`]
-9.  媒体文件 [`media`]
-10. swf文件 [`swf`]
-11. 代码风格验证 [ `hint` ]
-12. 浏览器服务 [ `server` ]
-###
 
+任务名称|描述
+---|---
+`clean` |删除生成文件
+`zip`|源文件备份
+`html`|html编译
+`styles`|styles 编译
+`scripts`|scripts 编译
+`images`|images 编译
+`sp`|雪碧图 编译
+`fonts`|字体文件转移
+`media`|媒体文件转移
+`swf`|播放器文件转移
+`hint`|代码风格验证
+`server`|浏览器服务
+`merge`|html 资源打包
+|
 
 ## less
     `@import (css) "../css/reset.css"` less 文件导入其他样式文件
@@ -56,58 +56,8 @@
 ## yoman (放弃)
     配置语法不熟悉 , 暂时不要花太多时间去处理这个(暂时不学习)
 
-## 图标文字
-    # http://www.fontawesome.com.cn/
-    # 不知道需求是否能够满足
 
- 这是一个图片 ![图片的描述信息](https://upload-images.jianshu.io/upload_images/6860761-fd2f51090a890873.jpg "鼠标移过显示标题")
- 这是一个超链接 [git](http://github.com)
-## markdown 语法测试
-1. `[链接描述](url "title")`
-2. `![图片描述](url "title")`
-3. `**这是加粗的文字**` **这是加粗的文字**
-4. `*这是倾斜的文字*` *这是倾斜的文字*
-5. `***这是斜体加粗的文字***` ***这是斜体加粗的文字***
-6. `~~这是加删除线的文字~~` ~~这是加删除线的文字~~
 
-## 注意事项
-    表格 || 代码高了 左侧都不可以包含其他东西!!!
-
-## 列表语法 -+*
-## 表格语法
-[表格在线配置](http://www.tablesgenerator.com/)
-
-|sad|hasj|kdha|sjk|dsa|
-|--|--|--|--|--|
-|1+2|2+3|3+4|4+5|5+6|
-|a+b|c+d|e+f|g+h|j+k|
-|444|555555|66666|77777|888888|
-
-## 代码高亮
-[高亮配置](https://www.jianshu.com/p/5df593b23dbf "配置")
-``` css
-    .a{background:red}
-    .b{background:green; padding: 2px 10px 2px 1px}
-```
-``` javascript
-    var arr =[1,2,3]
-    var obj = {"name":'yoti',"age":"111"}
-    function fn(a,b,c){
-        return a+b+c;
-    }
-    fn(1,2,3)
-    if(1){
-        console.log(1)
-    }else{
-        console.log(0)
-    }
-```
-
-## 任务规划
-- [x] 完成 -空格[x] 空格 描述
-- [ ] 未完成
-- [x] 完成
-- [ ] 加急
 
 ## gulp 插件列表
 ### 基本类型
@@ -149,6 +99,8 @@
 插件名称|插件描述|补充说明
 --|--|--
 `gulp-ejs`|ejs文件编译器|-
+`gulp-htmlmin`|html压缩|-
+`gulp-inline-source`|js css 资源打包| css js 写入html 文件,减少http请求
 
 ### 图片相关
 插件名称|插件描述|补充说明
@@ -156,4 +108,11 @@
 `gulp-imagemin`|图像压缩插件|-
 `gulp.spritesmith`|雪碧图插件|-
 
-
+### 更新日志
+`18-07-29`
+    1) 增加了html压缩功能呢
+    2) 增加了资源打包功能,减少http请求。
+    3) http://www.faviconico.org/favicon 图标在线制作
+    4) http://www.tablesgenerator.com/ markdown 表格生成
+    5) http://www.fontawesome.com.cn 字体图标库
+    6) https://www.jianshu.com/p/5df593b23dbf markdown 代码高亮

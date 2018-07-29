@@ -1,0 +1,25 @@
+{
+  "name": "t02",
+  "description": "1",
+  "main": "1",
+  "keywords": [
+    "1"
+  ],
+  "authors": [
+    "Jm"
+  ],
+  "license": "11",
+  "homepage": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+
+  }
+}
