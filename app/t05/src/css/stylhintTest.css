@@ -1,0 +1,321 @@
+/*#1 浮動使用超過10次會報價*/
+/*.fl01{ float: left}*/
+/*.fl02{ float: left}*/
+/*.fl03{ float: left}*/
+/*.fl04{ float: left}*/
+/*.fl05{ float: left}*/
+/*.fl06{ float: left}*/
+/*.fl07{ float: left}*/
+/*.fl08{ float: left}*/
+/*.fl09{ float: left}*/
+/*.fl10{ float: left}*/
+/*.fl11{ float: left}*/
+
+/*#2 内部禁止使用 導入樣式 ==> 改用 <link> 方式進行導入樣式表*/
+/*@import url(more.css);*/
+
+/*#3 字體定義禁止超過9個 ==> 超過9個報錯*/
+/*.f01{font-size: 10px;}*/
+/*.f02{font-size: 12px;}*/
+/*.f03{font-size: 14px;}*/
+/*.f04{font-size: 16px;}*/
+/*.f05{font-size: 18px;}*/
+/*.f06{font-size: 20px;}*/
+/*.f07{font-size: 20px;}*/
+/*.f08{font-size: 20px;}*/
+/*.f09{font-size: 20px;}*/
+/*.f10{font-size: 20px;}*/
+
+/*#4 @font-face 語法禁止使用超過5次 ==> 影響性能#超過6次就報錯 */
+/*@font-face {*/
+/*font-family: 'MyFontFamily';*/
+/*src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),*/
+/*url('myfont-webfont.woff') format('woff'),*/
+/*url('myfont-webfont.ttf')  format('truetype'),*/
+/*url('myfont-webfont.svg#svgFontName') format('svg');*/
+/*}*/
+/*@font-face {*/
+/*font-family: 'MyFontFamily';*/
+/*src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),*/
+/*url('myfont-webfont.woff') format('woff'),*/
+/*url('myfont-webfont.ttf')  format('truetype'),*/
+/*url('myfont-webfont.svg#svgFontName') format('svg');*/
+/*}*/
+/*@font-face {*/
+/*font-family: 'MyFontFamily';*/
+/*src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),*/
+/*url('myfont-webfont.woff') format('woff'),*/
+/*url('myfont-webfont.ttf')  format('truetype'),*/
+/*url('myfont-webfont.svg#svgFontName') format('svg');*/
+/*}*/
+/*@font-face {*/
+/*font-family: 'MyFontFamily';*/
+/*src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),*/
+/*url('myfont-webfont.woff') format('woff'),*/
+/*url('myfont-webfont.ttf')  format('truetype'),*/
+/*url('myfont-webfont.svg#svgFontName') format('svg');*/
+/*}*/
+/*@font-face {*/
+/*font-family: 'MyFontFamily';*/
+/*src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),*/
+/*url('myfont-webfont.woff') format('woff'),*/
+/*url('myfont-webfont.ttf')  format('truetype'),*/
+/*url('myfont-webfont.svg#svgFontName') format('svg');*/
+/*}*/
+/*@font-face {*/
+/*font-family: 'MyFontFamily';*/
+/*src: url('myfont-webfont.eot?#iefix') format('embedded-opentype'),*/
+/*url('myfont-webfont.woff') format('woff'),*/
+/*url('myfont-webfont.ttf')  format('truetype'),*/
+/*url('myfont-webfont.svg#svgFontName') format('svg');*/
+/*}*/
+
+/*#5 @font-face eot 字體必須增加?#iefix 查詢字符, ==> 否則報錯 */
+@font-face {
+    font-family: 'MyFontFamily';
+    src: url('myfont-webfont.woff') format('woff'),
+    url('myfont-webfont.eot?#iefix') format('embedded-opentype'),
+    url('myfont-webfont.ttf') format('truetype'),
+    url('myfont-webfont.svg#svgFontName') format('svg');
+}
+
+/*#6 禁止選擇器使用 *^|$~ 等匹配  ==> 衹能使用 $s05[class=xxx]{} 進行屬性匹配 */
+/*.s01[class~=xxx]{color: red;}*/
+/*.s02[class^=xxx]{color: red;}*/
+/*.s03[class|=xxx]{color: red;}*/
+/*.s04[class$=xxx]{color: red;}*/
+/*.s05[class*=xxx]{color: red;}*/
+
+/*#7 樣式表内部每個圖片衹允許用url 加載一次, ==> 使用2次就報錯# 減少加載請求 */
+/*.heart-icon {background: url(bbb.png) -16px 0 no-repeat;}*/
+/*.task-icon {background: url(bbb.png) -32px 0 no-repeat;}*/
+
+/*#8 屬性重複 ==> 似乎沒效果(less 導致的,不轉換就不會出錯,less 會把重複的屬性刪除掉)*/
+.mybox {
+    background: red;
+    background: red;
+    background: red;
+}
+
+/*#9 樣式表為空會報錯 ==> 必須定義一些個屬性 || 衹有一些個注釋什麽的就會報錯 */
+/*.empty01{*/
+/*!* a comment *!*/
+/*}*/
+
+/*#10 display 屬性 需要跟合適的屬性搭配才不會報錯 ==> */
+
+/*.d01{ display: inline-block; float: left; }*/
+/*.d02{ display: block; vertical-align: top; }*/
+/*.d03{ display: table-cell;   float: left;margin: 0;}*/
+/*.d04{ display: inline; height: 100px;width: 100px; }*/
+
+/*#11 屬性 和 值必須是已知的 ==> 否則報錯( 除了+前綴的那種不會報錯 ) || 屬性 和 值必須符合標準 */
+
+/*.sty1 { gg:123px; }*/
+/*.sty2 { width:abc;}*/
+
+/*#12 屬性寫入必須依照 a~z 的順序進行排列 ==> 否則報錯*/
+.orde01 {
+    /* 正確排序 ==> 請嚴格遵守排序規則 */
+    background: red;
+    color: red;
+    display: block;
+    empty-cells: hide;
+    float: left;
+    height: auto;
+    line-height: 20px;
+    margin: auto;
+    opacity: 1;
+    width: auto;
+}
+
+.orde02 {
+    /*錯誤排序 ==> 會報錯哦! ==> 不過第幾行顯示的數據錯誤哦!! ##  是less 模塊導致的 。*/
+    width: auto;
+    height: auto;
+}
+
+/*#13 需要補充前綴 ==> 爲什麽有的就不可以? ==> 奇怪了 !!! 不懂報錯機制。*/
+.css301 {
+    -webkit-animation: all 1s;
+}
+
+/*爲什麽不會報錯?奇怪了*/
+.css302 {
+    transform: rotate(7deg);
+    /*-webkit-transform:rotate(7deg);*/
+    /*-o-transform:rotate(7deg);*/
+    /*-moz-transform:rotate(7deg);*/
+    /*-ms-transform:rotate(7deg);*/
+
+}
+
+/*這個爲什麽會報錯? 難道是說不需要前綴??*/
+
+/*#14 值的前綴 ==> 漸變值必須帶前綴 -o-|-moz-|-webkit-| 注銷了就會報錯*/
+.attr01 {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1e5799), color-stop(100%, #7db9e8));
+    background: -webkit-linear-gradient(top, #1e5799 0%, #7db9e8 100%);
+    background: -moz-linear-gradient(top, #1e5799 0%, #7db9e8 100%);
+    background: -o-linear-gradient(top, #1e5799 0%, #7db9e8 100%);
+    /*background: -ms-linear-gradient(top,  #1e5799 0%,#7db9e8 100%);*/
+}
+
+/*#15 rgba|hsla 等(css3) 帶透明屬性的必須配備 備用色 ==> 并且備用色(標準)必須在css3顔色後面 */
+
+.color01 {
+    /*錯誤! 提示需要設置一個備用色 ==> 必須是 #fff|red|rgb 格式*/
+    /*background: red;*/
+    background: rgba(1, 1, 1, 0.9);
+}
+
+.color02 {
+    /*background:#fff ;*/
+    background: hsla(100, 50%, 100%, 0.5);
+}
+
+.color03 {
+    /*background: rgb(1,1,1);*/
+    background: hsla(100, 50%, 100%, 0.5) url(foo.png);
+}
+
+.color04 {
+    /*background: #fff;*/
+    background: hsl(100, 50%, 100%);
+}
+
+/*#16 hack 屬性, 禁用 *width(ie6) | _width(ie7) 等ie瀏覽器語法 */
+
+.hack01 {
+    _width: 100px;
+}
+
+.hack02 {
+    *width: 100px;
+}
+
+/*#17 h1~h6 作爲頂級標簽,禁止使用限定對標簽進行樣式定義 */
+
+.h01 h3 {
+    /*!!! 禁止對h1~h6 標簽進行定義*/
+    font-size: 12px;
+}
+
+.h01:hover h3 {
+    /*!!! 禁止 hover 去操作 h3 樣式*/
+    font-size: 16px;
+}
+
+/*#18 複合屬性使用簡寫 ==> 複合屬性的所有參數都齊了 ==> 使用縮寫 */
+.merge01 {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    /*使用簡寫*/
+}
+
+/*#19 text-indent:<=-100, 則必須增加 direction: rtl; 屬性 ==> 否則報錯  */
+
+.indent01 {
+    /*-1~99 不需要 direction: rtl*/
+    text-indent: -99px;
+}
+
+.indent02 {
+    /*!!! 需要配合direction: ltr 屬性才能不報錯 */
+    /*direction: ltr;*/
+    text-indent: -999px;
+}
+
+/*#20 outline ==> 衹能給  :foucs 使用??*/
+
+.outline1 {
+    /* 正常的類不能使用 */
+    /*outline: 0;*/
+}
+
+.outline2 {
+    /* 正常的類不能使用 */
+    /*outline: none;*/
+}
+
+.outline3 :focus {
+    /* 衹有僞類才可以使用嗎? ==> 顔色不爲空! */
+    outline: #00b3ee;
+}
+
+/*#21 禁止使用 !important 屬性 ==> */
+
+.A01 {
+    /*!! 禁止使用!*/
+    background: red !important;
+}
+
+/*#22 禁止使用ID選擇器 ==> 導致代碼無法服用 */
+
+#ID01 {
+    background: yellow;
+}
+
+/*#23 box-sizing IE6 ~ IE7 不支持這個屬性。 ==> 衹是單純的告知,沒必要去修改 .*/
+
+.sizi01 {
+    box-sizing: border-box;
+}
+
+.sizi02 {
+    box-sizing: content-box;;
+}
+
+/*#24 選擇器禁止使用 .abc.active 這種聯合選擇權 ==> ie6 不支持*/
+
+.sect01.active {
+    color: red;
+}
+
+/*#25 "*"通配符 和 [title=123] 這種選擇權使用必須要規範,否則會影響性能 */
+
+* {
+    /*! 禁止"*"這樣選取所以節點*/
+    background: red;
+}
+
+.X01 * {
+    /*!!! 禁止*/
+    background: red;
+}
+
+.X02 * .X03 {
+    /*!!! 允許!! 性質完全不一樣*/
+    background: red;
+}
+
+[title=abc] {
+    /*! 禁止使用 */
+    background: red;
+}
+
+.X04 [title=abc] {
+    /*! 禁止使用*/
+    background: red;
+}
+
+.X04 [title=abc] .X05 {
+    /*! 正確*/
+    background: red;
+}
+
+/*#26 為0的值不得使用單位 width:0px ==> width:0 */
+.w01{
+    /*! 值=0 不得使用單位*/
+    width: 0px;
+}
+.radis01{
+    /*!! 帶前綴會報錯嗎? ==> 過期了的!! ==> 把這個刪除掉就可以? :: 一些屬性不需要前綴支持了,所以需要刪除掉*/
+    border-radius: 5px;
+    /*-moz-border-radius: 5px;*/
+    /*-o-border-radius: 5px;*/
+    /*-webkit-border-radius: 5px;*/
+    /*-ms-border-radius: 5px;*/
+}

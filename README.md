@@ -2,9 +2,15 @@
 ## gulp 项目调试
 ###     **配置信息**
 `gulp4.0`+`ejs`+`less`+`javascript`
-###     watch 监听||事件 `watch.on('unlink',fn)`
-    `unlink` 链接发生删除
-    `change` 文件发生修改
+
+### 增加一個安裝的 md 文件。
+
+事件|描述
+---|---
+`unlink`|链接发生删除
+`change`|文件发生修改
+`add`|文件发生增加
+
 ###     **其他**
     **问题**:`gulpfile.js 代码太过庞杂,将代码分割成多个xx.JS文件(任务进行分离),太多文件写入可读性太差了
     **解决**:`使用 require('require-dir') 插件将任务进行模块化!
@@ -42,20 +48,6 @@
 `hint`|代码风格验证
 `server`|浏览器服务
 `merge`|html 资源打包
-|
-
-## less
-    `@import (css) "../css/reset.css"` less 文件导入其他样式文件
-    内部导入的方式,解决排序上下文的关系 ==> 废弃了合并操作。
-## ejs
-    `<% include ejs/header.ejs %>` 模块的插入
-
-## bower(放弃)
-    放弃使用,加载的文件需要频繁的配置 gulpfile.js 文件,引入自己用的文件也是很狗血,充当一个插件下载库还不错
-    市面上很多插件都没有配备完善的配置,导致一些版本无法加载正确的路径 ==> 改用手动稳定一点
-## yoman (放弃)
-    配置语法不熟悉 , 暂时不要花太多时间去处理这个(暂时不学习)
-
 
 
 
@@ -110,9 +102,48 @@
 
 ### 更新日志
 `18-07-29`
+
     1) 增加了html压缩功能呢
     2) 增加了资源打包功能,减少http请求。
     3) http://www.faviconico.org/favicon 图标在线制作
     4) http://www.tablesgenerator.com/ markdown 表格生成
     5) http://www.fontawesome.com.cn 字体图标库
     6) https://www.jianshu.com/p/5df593b23dbf markdown 代码高亮
+    7) 文件发生添加 => 进行自动转移 => 雪碧图不需要使用 最后一次修改!!(没有发生转移)
+    8) `a/b/c.txt` 会正常取得文件, 而`\\a\\b\\c.txt` 会把整个路径进行转移(需要进行正则转义)。
+    9) 增加了 路径监听=> 文件删除事件 和 文件增加事件的处理方法 ==> 增加了 '\\' 转义方法
+    10) 代码风格验证需要完善一下。
+
+`19-07-30`
+
+    1) gulp 使用命令行传参
+    2) ejs 进行多页面数据绑定,检测数据文件是否存在.
+    3) css js 代码风格验证要处理一下
+    4) 插件配置獨立到 plugConfig.js 文件下面,進行集中管理 ok
+    5) config.json 來管理 項目路徑不合理 ==> 調整為 pathConfig.js 來進行路徑管理。ok
+    6) js 目錄需要進行一下調整 ==> 放在一級目錄不合適 ==> 那麽庫文件要怎麽處理? ==> 其實這樣也不錯!
+
+`19-07-31`
+
+    1) 增加 `媒體`,`字體`,`圖片`,`播放器文件` 文件增加刪除等自動化操作。
+    2) css 代碼驗證處理不了 less 文件, less 文件編譯錯誤會報錯嗎?
+    3) !important 使用越多,説明對 css 的掌控力越弱。
+    4) less 使用 plumber 來進行驗證(處理不了格式;)
+    5) css 使用 csslint 進行格式驗證()
+    6) css 驗證( https://blog.csdn.net/kaosini/article/details/44086113 )
+
+`19-08-01`
+    1) JSHINT http://jshint.com/docs/options/
+    2) http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html javascript 提升.
+    3) https://blog.csdn.net/liuhe688/article/details/51001776 JS嚴格模式
+
+`Other`
+    1) less `@import (css) "../css/reset.css"` less 文件导入其他样式文件
+        内部导入的方式,解决排序上下文的关系 ==> 废弃了合并操作。
+    2) `<% include ejs/header.ejs %>` 模块的插入 ejs 模塊導入
+    3) bower(放弃)
+        放弃使用,加载的文件需要频繁的配置 gulpfile.js 文件,引入自己用的文件也是很狗血,充当一个插件下载库还不错
+        市面上很多插件都没有配备完善的配置,导致一些版本无法加载正确的路径 ==> 改用手动稳定一点
+    4) yoman (放弃)
+        配置语法不熟悉 , 暂时不要花太多时间去处理这个(暂时不学习)
+

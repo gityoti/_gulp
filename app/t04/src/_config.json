@@ -1,0 +1,70 @@
+{
+  "dev": true,
+  "root": {
+    "tip": "根目录设置",
+    "src": "src",
+    "dist": "dist",
+    "history": "history"
+  },
+  "html": {
+    "tip": "编译html文件",
+    "src": ["/index.ejs","/a.ejs","/b.ejs","/c.ejs"],
+    "dist": "/",
+    "listen": ["/ejs/*.ejs","/*.ejs","/data/*.json"]
+  },
+  "style": {
+    "tip": "样式文件",
+    "src": "/*.less",
+    "dist": "/styles/",
+    "listen": ["/less/*.less", "/css/*.css"]
+  },
+  "images": {
+    "tip": "图像文件",
+    "src": "/images/*.{jpg,png,gif,svg,ico}",
+    "dist": "/images/",
+    "listen": ["/images/*.{jpg,png,gif,svg}"]
+  },
+  "sp": {
+    "tip": "雪碧图",
+    "src": "/images/icon/*.{jpg,png}",
+    "dist": "/images/",
+    "listen": ["/images/icon/*.{jpg,png}"]
+  },
+  "scripts": {
+    "tip": "脚本文件",
+    "src": "/*.js",
+    "dist": "/scripts/",
+    "listen": ["/scripts/**/*.js","/*.js"]
+  },
+  "merge":{
+    "tip":"资源打包,css js 都写入html 减少http请求",
+    "src":"/*.html",
+    "dist":""
+  },
+  "media": {
+    "tip": "媒体文件",
+    "src": "/media/*.{mp3,mp4}",
+    "dist": "/media/",
+    "listen": ["media/*.{mp3,mp4}"]
+  },
+  "fonts": {
+    "tip": "依赖字体文件",
+    "src": "/fonts/*.{otf,eot,ttf,svg,woff,woff2}",
+    "dist": "/fonts/",
+    "listen": ["/fonts/*.{otf,eot,svg,ttf,woff,woff2}"]
+  },
+  "swf": {
+    "tip": "swf相关文件",
+    "src": "/swf/*.*",
+    "dist": "/swf/",
+    "listen":["/swf/*.*"]
+  },
+  "zip": {
+    "tip": "备份",
+    "src": ["src/**/**","gulpfile.js","bower.json"],
+    "dist": "/"
+  },
+  "config":{
+    "tip":"插件配置参数"
+  }
+}

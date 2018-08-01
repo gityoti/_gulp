@@ -37,7 +37,7 @@
     "listen": ["/scripts/**/*.js","/*.js"]
   },
   "merge":{
-    "tip":"资源打包",
+    "tip":"资源打包,css js 都写入html 减少http请求",
     "src":"/*.html",
     "dist":""
   },
@@ -63,5 +63,8 @@
     "tip": "备份",
     "src": ["src/**/**","gulpfile.js","bower.json"],
     "dist": "/"
+  },
+  "config":{
+    "tip":"插件配置参数"
   }
 }

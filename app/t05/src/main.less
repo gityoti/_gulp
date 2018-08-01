@@ -1,0 +1,29 @@
+//@import (css) "./css/reset.css";
+@import (less) "./less/a.less";
+@import (less) "./less/b.less";
+
+@a: 123px;
+body {
+  background: blue;
+}
+
+//# gulp 规划的不好
+div {
+  height: @a;
+}
+
+b {
+  background: red;
+  transition: all 1s;
+}
+
+div {
+  a {
+    background: red;
+  }
+  &:after {
+    width: 100px;
+  }
+}
+
+//# 複合屬性要整理成1條屬性 ==> 2條就不會出現這個問題
